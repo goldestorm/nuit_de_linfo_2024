@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeu Environnemental</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <h1 id="titre">~~Mini Jeu N°1 - 🌍 Protéger la Planète~~</h1>
+  <a>Note : C'est jamais assez même en été</a>
+
+  <!-- Zone de jeu principale -->
+  <div id="game1">
+    <a id="hidden-page-button1" href="pages/fuite.html" style="display: none;">Mini-jeu N°2</a>
+    <div id="game">
+      <div id="stats">
+        <p>🌡️ Température additionnelle : <span id="temperature">1.5°C</span></p>
+        <p>🌳 Biodiversité : <span id="biodiversity">80%</span></p>
+        <p>💨 Pollution : <span id="pollution">40%</span></p>
+      </div>
+      <div id="actions">
+        <button onclick="adjustClimate('renewable')">Investir dans les Énergies Renouvelables</button>
+        <button onclick="adjustClimate('reforest')">Reboiser des Forêts</button>
+        <button onclick="adjustClimate('reduce_pollution')">Réduire la Pollution Industrielle</button>
+      </div>
+      <p id="message"></p>
+    </div>
+
+    <!-- Bouton pour augmenter la température -->
+    <button id="increase-temp-button" onclick="handleIncreaseTemp()">Aller-retour en jet</button>
+  </div> 
+  <div id="explanation-message1"></div>
+</br>
+  <h2>~~Mini Jeu N°3 - Retire le plastique jaune de l'océan~~</h2>
+  <a>Note: les cercles jaunes sont enlevable uniquement en diagonale</a>
+  <div id="explanation-message2"></div>
+  <!-- Zone pour le mini-jeu Hedge Honcho -->
+  <div id="mini-game">
+    <div id="game-zone">
+      <div id="circle-container">
+        <div id="circle-container-design">
+        <div class="ball" id="ball1"></div>
+        <div class="ball" id="ball2"></div>
+        <div class="ball" id="ball3"></div>
+        <div class="ball" id="ball4"></div>
+        <div class="ball" id="ball5"></div>
+        <div class="ball" id="ball6"></div>
+        <div class="ball" id="ball7"></div>
+        <div class="ball" id="ball8"></div>
+        </div>
+      </div>
+    </div>
+    <p id="timer">Temps restant : 15s</p>
+    <button id="restart-button" onclick="restartMiniGame()">Relancer le jeu</button>
+  </div>
+
+  <!-- Bouton caché pour accéder à une autre page -->
+  <div id="mini-game2">
+    <a id="hidden-page-button2" href="pages/trophies.html" style="display: none;">Salle des trophées</a>
+  </div>
+  <script src="js/index.js"></script>
+</body>
+</html>

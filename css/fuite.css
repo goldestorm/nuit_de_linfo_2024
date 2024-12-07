@@ -1,0 +1,143 @@
+/* Style général du corps */
+body {
+  font-family: 'Press Start 2P', cursive; /* Police pixelisée rétro */
+  text-align: center;
+  background: black; /* Fond noir typique des jeux rétro */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #00ffcc; /* Texte vert-bleu néon, rappelant les fluides biologiques */
+}
+
+/* Zone de jeu */
+#game-area {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  margin: 20px auto;
+  background: linear-gradient(145deg, #6600cc, #330066); /* Dégradé violet-rose, évoquant le plasma ou un microscope */
+  border: 4px dashed #ff6699; /* Bordure rose pour simuler une structure organique */
+  border-radius: 0; /* Pas de coins arrondis pour un look pixelisé */
+  box-shadow: 0 0 20px #ff6699, inset 0 0 10px #ff6699; /* Effet néon */
+  overflow: hidden;
+  image-rendering: pixelated; /* Rend les éléments plus "pixélisés" */
+}
+
+/* Joueur : cellule vivante */
+#player {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: radial-gradient(circle, #00ffcc, #006666); /* Effet cellulaire */
+  border: 2px solid #00cc99; /* Bordure vert-bleu évoquant une membrane cellulaire */
+  border-radius: 50%; /* Forme circulaire pour ressembler à une cellule */
+  box-shadow: 0px 0px 10px #00ffcc; /* Lumière verte lumineuse */
+  animation: pulsate 1.5s infinite; /* Animation pour simuler une pulsation vivante */
+  image-rendering: pixelated; /* Aspect pixelisé */
+}
+
+/* Animation de pulsation */
+@keyframes pulsate {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Ennemis : virus ou toxines */
+.enemy {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #ff0000, #990000); /* Couleur rouge pour représenter un danger */
+  border: 2px solid #ff3300; /* Bordure rouge vif */
+  border-radius: 50%; /* Forme sphérique pour ressembler à des virus ou des globules */
+  box-shadow: 0px 0px 10px #ff0000; /* Lumière rouge menaçante */
+  animation: spin 1.5s linear infinite; /* Animation pour les faire tourner */
+  image-rendering: pixelated;
+}
+
+/* Animation de rotation pour les ennemis */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Chronomètre */
+#timer {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00ffcc; /* Couleur néon correspondant au joueur */
+  margin-top: 20px;
+  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; /* Effet lumineux */
+}
+
+/* Message de fin de jeu */
+#game-over-message {
+  font-size: 32px;
+  color: #ff0033; /* Rouge pour indiquer la fin */
+  text-shadow: 0 0 5px #ff0033, 0 0 10px #ff0033; /* Effet lumineux */
+  animation: blink 1s infinite; /* Animation clignotante */
+}
+
+/* Animation clignotante */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Bouton de redémarrage */
+#restart-button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #330066; /* Fond violet */
+  border: 2px dashed #ff6699; /* Bordure rose, rappelant des tissus vivants */
+  cursor: pointer;
+  border-radius: 0; /* Pas de coins arrondis */
+  text-transform: uppercase; /* Texte en majuscules */
+  box-shadow: 0px 0px 10px #ff6699; /* Effet lumineux */
+  transition: transform 0.2s ease;
+}
+
+#restart-button:hover {
+  transform: scale(1.1); /* Agrandissement au survol */
+}
+
+/* Styles pour les appareils mobiles */
+@media (max-width: 768px) {
+  #game-area {
+    width: 100%;
+    height: 70vh;
+    margin: 10px auto;
+  }
+
+  #player, .enemy {
+    width: 30px;
+    height: 30px;
+  }
+
+  #timer {
+    font-size: 16px;
+  }
+
+  #restart-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

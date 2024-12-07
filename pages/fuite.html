@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini-jeu : La lutte contre les virus</title>
+  <link rel="stylesheet" href="../css/fuite.css">
+</head>
+<body>
+  <a href="../index.html">Acceuil</a>
+  <h1>Mini-jeu : La lutte contre les virus</h1>
+  <p>Déplacez la souris pour éviter les virus. Si vous êtes touché, c'est Game Over !</p>
+  <div id="game-area">
+    <div id="player"></div>
+  </div>
+  <div id="explanation-message"></div> <!-- Conteneur pour le message explicatif -->
+  <div id="timer">Temps restant : 10s</div>
+  <div id="additional-message"></div> <!-- Message supplémentaire -->
+
+  <p id="game-over-message"></p>
+  <div id="game-over-message" style="display: none;"></div>
+  <button id="restart-button" style="display: none;">Recommencer</button> <!-- Le bouton est masqué par défaut -->
+  <a href="../index.html" id="continuer-button" style="display: none;">
+    <button>Continuer</button>
+  </a>
+  <script src="../js/fuite.js"></script>
+</body>
+</html>
